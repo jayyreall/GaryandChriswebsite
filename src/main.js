@@ -10,7 +10,7 @@ const nav = [['Services', '/services/'], ['Gallery', '/gallery/'], ['About', '/a
 const page = currentRoute;
 const link = (to, text, className = '') => `<a href="${basePath}${to}" class="${className}">${text}</a>`;
 const image = (label = 'Image placeholder', variant = '') => `<div class="placeholder-image ${variant}" role="img" aria-label="${label}"><span>✦</span><small>${label}</small></div>`;
-function navigation() { return `<nav class="navigation" aria-label="Main navigation">${link('/', 'S/P', 'wordmark')}<div class="nav-links">${nav.map(([text, to]) => link(to, text, page === to.slice(1, -1) ? 'active' : '')).join('')}</div></nav>`; }
+function navigation() { return `<nav class="navigation" aria-label="Main navigation"><div class="nav-links">${nav.map(([text, to]) => link(to, text, page === to.slice(1, -1) ? 'active' : '')).join('')}</div></nav>`; }
 function footer() { return `<footer><div><strong>Company name placeholder</strong><p>Contact information placeholder</p></div><p>Social links placeholder<br>© Copyright placeholder</p></footer>`; }
 function layout(content, title, eyebrow = 'Phase 1 foundation') { return `${navigation()}<main>${title ? `<header class="page-header"><p class="eyebrow">${eyebrow}</p><h1>${title}</h1>${link('/', '← Return home', 'home-link')}</header>` : ''}${content}</main>${footer()}`; }
 const infoCard = (index, title, text) => `<article class="info-card"><span>${index}</span><h2>${title}</h2><p>${text}</p></article>`;
